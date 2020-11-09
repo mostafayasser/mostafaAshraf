@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "395562029383",
+    "firebase_url": "https://preja-f29b4.firebaseio.com",
+    "project_id": "preja-f29b4",
+    "storage_bucket": "preja-f29b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:395562029383:android:572d9774700a74def2fc62",
+        "android_client_info": {
+          "package_name": "com.pjera.flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "395562029383-bmduj8no9n61ikc6oo04kpipb1th6cce.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pjera.flutter",
+            "certificate_hash": "2a497e864ef75f5f18f98a0bc6b983cc59cd8a99"
+          }
+        },
+        {
+          "client_id": "395562029383-eiidkorbp0fa6auk7m7f0nk3c85em42q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNDV59mCOTtuWFjhU2HvBKomsbXLttuiU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "395562029383-eiidkorbp0fa6auk7m7f0nk3c85em42q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

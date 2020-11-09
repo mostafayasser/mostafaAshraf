@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>395562029383-rccgp4h293745em31ls0e39snqr0lb5a.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.395562029383-rccgp4h293745em31ls0e39snqr0lb5a</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>395562029383-bmduj8no9n61ikc6oo04kpipb1th6cce.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAyiu_OhBZMDxQ_H5017T3N4Hyy5Yn1-VE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>395562029383</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.pjera.flutter</string>
+	<key>PROJECT_ID</key>
+	<string>preja-f29b4</string>
+	<key>STORAGE_BUCKET</key>
+	<string>preja-f29b4.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:395562029383:ios:eae1255e9b790d09f2fc62</string>
+	<key>DATABASE_URL</key>
+	<string>https://preja-f29b4.firebaseio.com</string>
+</dict>
+</plist>
