@@ -1,0 +1,66 @@
+class CreateExcel extends StatelessWidget {
+  final firestore = FirebaseFirestore.instance;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: StreamBuilder<QuerySnapshot>(
+        stream: firestore.collection("orders").snapshots(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          return Center(
+            child: RaisedButton(
+              onPressed: () {
+                var docs = snapshot.data.docs;
+                var excel = Excel.createExcel();
+                Sheet sheetObject = excel['Orders'];
+                excel.setDefaultSheet("Orders");
+                for (int i = 0; i < docs.length; i++) {
+                  if (i == 0) {
+                    sheetObject.appendRow([
+                      "orderNumber",
+                      "address",
+                      "channel",
+                      "description",
+                      "line",
+                      "name",
+                      "status",
+                      "phone",
+                      "quantity",
+                      "totalAccount",
+                    ]);
+                  }
+                  sheetObject.appendRow([
+                    docs[i].data()["orderNumber"],
+                    docs[i].data()["address"],
+                    docs[i].data()["channel"],
+                    docs[i].data()["description"],
+                    docs[i].data()["line"],
+                    docs[i].data()["name"],
+                    docs[i].data()["status"],
+                    docs[i].data()["phone"],
+                    docs[i].data()["quantity"],
+                    docs[i].data()["totalAccount"],
+                  ]);
+                }
+
+                String outputFile =
+                    "/Users/mac/Development/dgdfgdfg/lib/orders.xlsx";
+                excel.encode().then((onValue) {
+                  File(outputFile)
+                    ..createSync(recursive: true)
+                    ..writeAsBytesSync(onValue);
+                });
+              },
+              child: Text("Create"),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
