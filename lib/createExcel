@@ -1,5 +1,26 @@
-import 'package:excel/excel.dart';
 import 'dart:io';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:excel/excel.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:permission_handler/permission_handler.dart';
+
+
+Future<String> getFilePath() async {
+  final Directory extDir = await getExternalStorageDirectory();
+  String dirPath = '${extDir.path}';
+  var status = await Permission.storage.status;
+  if (!status.isGranted) {
+    await Permission.storage.request();
+  }
+  dirPath = dirPath.replaceAll("/Android/data/com.example.dgdfgdfg/files", "");
+  print(dirPath);
+  await Directory(dirPath).create(recursive: true);
+
+  return dirPath;
+}
 
 class CreateExcel extends StatelessWidget {
   final firestore = FirebaseFirestore.instance;
@@ -17,7 +38,7 @@ class CreateExcel extends StatelessWidget {
           }
           return Center(
             child: RaisedButton(
-              onPressed: () {
+              onPressed: () async {
                 var docs = snapshot.data.docs;
                 var excel = Excel.createExcel();
                 Sheet sheetObject = excel['Orders'];
@@ -50,9 +71,9 @@ class CreateExcel extends StatelessWidget {
                     docs[i].data()["totalAccount"],
                   ]);
                 }
-
-                String outputFile =
-                    "/Users/mac/Development/dgdfgdfg/lib/orders.xlsx";
+                final directory = await getFilePath();
+                print(directory);
+                String outputFile = "$directory/excel/orders.xlsx";
                 excel.encode().then((onValue) {
                   File(outputFile)
                     ..createSync(recursive: true)
